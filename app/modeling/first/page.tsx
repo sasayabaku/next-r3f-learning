@@ -5,9 +5,21 @@ import { Canvas } from "@react-three/fiber"
 import { useGLTF, OrbitControls, useHelper } from "@react-three/drei"
 import { StrictMode, useRef } from "react"
 
+import { useControls } from "leva"
+
 import { Perf } from "r3f-perf"
 
 export default function Page() {
+  const { intensity, backgroundColor } = useControls({
+    intensity: {
+      value: 0.5,
+      min: 0,
+      max: 1,
+      step: 0.1,
+    },
+    backgroundColor: "#fffff0",
+  })
+
   return (
     <>
       <div className='w-full h-screen'>
@@ -27,6 +39,11 @@ export default function Page() {
           >
             <OrbitControls makeDefault />
             <Perf position='top-left' />
+
+            <color args={[backgroundColor]} attach='background' />
+
+            <ambientLight intensity={intensity} />
+
             <Office />
             <axesHelper args={[10]} />
           </Canvas>
@@ -46,7 +63,6 @@ function Office() {
 
   return (
     <>
-      <ambientLight intensity={0.5} />
       <group dispose={null} ref={ref}>
         <mesh geometry={nodes["01_office"].geometry} material={materials["01"]} />
         <mesh
