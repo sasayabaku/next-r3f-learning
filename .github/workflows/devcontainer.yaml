@@ -27,4 +27,4 @@ jobs:
         run: |
           cp .docker/.dockerignore .
           cp .docker/Dockerfile .
-          docker build -f Dockerfile -t r3f-tutorial:${GITHUB_SHA}
+          docker build -f Dockerfile -t r3f-tutorial:${GITHUB_SHA} .
