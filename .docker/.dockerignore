@@ -1,0 +1,12 @@
+# Ignore everything
+**
+
+# Not Ignore
+!app/
+!public/
+!.eslintrc
+!.prettierignore
+!.prettierrc
+!package.json
+!tsconfig.json
+!yarn.lock
