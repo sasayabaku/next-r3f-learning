@@ -1,0 +1,29 @@
+name: 'devcontainer'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - '**'
+    paths:
+      - 'app/**'
+      - '.eslintrc.json'
+      - 'package.json'
+      - 'yarn.lock'
+      - '.github/workflows/code-lint.yaml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+
+      - name: Build and run dev container task
+        uses: devcontainers/ci@v0.3
+        with:
+          runCmd: yarn build
