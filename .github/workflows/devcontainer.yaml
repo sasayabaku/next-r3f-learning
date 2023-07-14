@@ -16,14 +16,15 @@ on:
       - '.github/workflows/code-lint.yaml'
 
 jobs:
-  build:
+  security-check:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout (GitHub)
         uses: actions/checkout@v3
 
-      - name: Build and run dev container task
-        uses: devcontainers/ci@v0.3
-        with:
-          runCmd: yarn build
+      - name: Build Docker Image
+        run: |
+          cp .docker/.dockerignore .
+          cp .docker/Dockerfile .
+          docker build -f Dockerfile -t r3f-tutorial:${GITHUB_SHA}
