@@ -7,7 +7,7 @@ import { Sphere, OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import * as THREE from 'three';
 
-import './styles.css';
+import './styles.scss';
 
 interface DomeProps {
   performance: string;
