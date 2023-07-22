@@ -79,7 +79,7 @@ function Scene() {
 
 function Main() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-full">
       <StrictMode>
         <Canvas
           flat
