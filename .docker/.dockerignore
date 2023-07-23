@@ -4,6 +4,7 @@
 # Not Ignore
 !app/
 !public/
+!redux/
 !.eslintrc
 !.prettierignore
 !.prettierrc

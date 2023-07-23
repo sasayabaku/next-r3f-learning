@@ -2,7 +2,7 @@
 FROM node:18 AS builder
 
 ENV NODE_ENV production
-# WORKDIR /app
+WORKDIR /app
 COPY . .
 RUN yarn --frozen-lockfile && yarn build
 
