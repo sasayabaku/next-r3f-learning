@@ -1,5 +1,5 @@
 import './global.scss';
-import { ReduxProvider } from 'reduxProvider';
+import { ReduxProvider } from './reduxProvider';
 
 export const metadata = {
   title: 'Next.js + Three.js',
