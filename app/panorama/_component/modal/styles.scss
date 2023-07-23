@@ -33,4 +33,21 @@
   div {
     margin: 5px 0;
   }
+
+  .buttonWrapper {
+    display: block;
+    width: 100%;
+    text-align: right;
+
+    .closeModal {
+      position: relative;
+      pointer-events: auto;
+      width: 24px;
+      height: 24px;
+      background-image: url(/icons/icon-modal-shut.svg);
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
 }

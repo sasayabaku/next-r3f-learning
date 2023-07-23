@@ -3,6 +3,7 @@
 'use client';
 
 import { Suspense, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Canvas, useLoader } from '@react-three/fiber';
 import { Sphere, OrbitControls } from '@react-three/drei';
@@ -12,6 +13,7 @@ import { Modal } from '../_component/modal';
 import { Footer } from '../_component/footer';
 
 import './styles.scss';
+import { RootState } from '../../../redux/store';
 
 interface DomeProps {
   performance: string;
@@ -44,6 +46,8 @@ export default function Page() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isModal, setModal] = useState('');
 
+  const whatModal = useSelector((state: RootState) => state.modal.modal);
+
   return (
     <div id="panorama">
       <Canvas flat camera={{ position: [-0.1, 0, 0] }}>
@@ -56,7 +60,7 @@ export default function Page() {
 
       <Footer />
 
-      {isModal === 'about' && <Modal />}
+      {whatModal === 'about' && <Modal />}
     </div>
   );
 }
