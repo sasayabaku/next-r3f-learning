@@ -2,10 +2,14 @@
 
 'use client';
 
+import { Suspense, useState } from 'react';
+
 import { Canvas, useLoader } from '@react-three/fiber';
 import { Sphere, OrbitControls } from '@react-three/drei';
-import { Suspense } from 'react';
 import * as THREE from 'three';
+
+import { Modal } from '../_component/modal';
+import { Footer } from '../_component/footer';
 
 import './styles.scss';
 
@@ -37,6 +41,9 @@ function Dome({ performance }: DomeProps) {
 }
 
 export default function Page() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [isModal, setModal] = useState('');
+
   return (
     <div id="panorama">
       <Canvas flat camera={{ position: [-0.1, 0, 0] }}>
@@ -46,6 +53,10 @@ export default function Page() {
           <Dome performance="high" />
         </Suspense>
       </Canvas>
+
+      <Footer />
+
+      {isModal === 'about' && <Modal />}
     </div>
   );
 }
