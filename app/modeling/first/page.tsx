@@ -27,7 +27,7 @@ export default function Page() {
           <Canvas
             gl={{
               antialias: true,
-              toneMapping: THREE.ACEFilmicToneMapping,
+              toneMapping: THREE.ACESFilmicToneMapping,
               outputEncoding: THREE.sRGBEncoding,
             }}
             camera={{
@@ -53,27 +53,44 @@ export default function Page() {
   )
 }
 
+// function Office() {
+//   const { nodes, materials } = useGLTF("/models/office.glb")
+
+//   const ref: any = useRef()
+
+//   console.log(nodes)
+//   console.log(materials)
+
+//   return (
+//     <>
+//       <group dispose={null} ref={ref}>
+//         <mesh geometry={nodes["01_office"].geometry} material={materials["01"]} />
+//         <mesh
+//           geometry={nodes["02_library"].geometry}
+//           material={materials["02"]}
+//           position={[2.1, 0, 0]}
+//           rotation={[0, -(Math.PI / 2), 0]}
+//         />
+//       </group>
+//     </>
+//   )
+// }
+
 function Office() {
-  const { nodes, materials } = useGLTF("/models/office.glb")
+  const { scene } = useGLTF("/models/Cozy_Room_ALL.glb")
 
   const ref: any = useRef()
 
-  console.log(nodes)
-  console.log(materials)
+  console.log(scene)
 
   return (
     <>
       <group dispose={null} ref={ref}>
-        <mesh geometry={nodes["01_office"].geometry} material={materials["01"]} />
-        <mesh
-          geometry={nodes["02_library"].geometry}
-          material={materials["02"]}
-          position={[2.1, 0, 0]}
-          rotation={[0, -(Math.PI / 2), 0]}
-        />
+        <primitive object={scene} />
       </group>
     </>
   )
 }
 
 useGLTF.preload("/models/office.glb")
+useGLTF.preload("/models/Cozy_Room_ALL.glb")

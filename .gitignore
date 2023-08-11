@@ -40,3 +40,6 @@ report.*.json
 
 # .vscode Debugging
 .vscode/*-debug-profile
+
+# modelfile
+/public/models/Cozy_Room_ALL.glb
