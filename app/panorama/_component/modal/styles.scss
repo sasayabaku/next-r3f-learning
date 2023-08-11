@@ -1,0 +1,53 @@
+@use '../../../global.scss' as *;
+
+.modalBody {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background-color: $color-modal-overlay;
+
+  z-index: $z-index-modal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalObject {
+  width: 300px;
+  height: 450px;
+  padding: 15px;
+  background-color: $color-modal-bg;
+
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 24px;
+
+  div {
+    margin: 5px 0;
+  }
+
+  .buttonWrapper {
+    display: block;
+    width: 100%;
+    text-align: right;
+
+    .closeModal {
+      position: relative;
+      pointer-events: auto;
+      width: 24px;
+      height: 24px;
+      background-image: url(/icons/icon-modal-shut.svg);
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

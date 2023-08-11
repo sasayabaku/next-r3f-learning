@@ -1,0 +1,30 @@
+name: 'devcontainer'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - '**'
+    paths:
+      - 'app/**'
+      - '.eslintrc.json'
+      - 'package.json'
+      - 'yarn.lock'
+      - '.github/workflows/code-lint.yaml'
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (GitHub)
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: |
+          cp .docker/.dockerignore .
+          cp .docker/Dockerfile .
+          docker build -f Dockerfile -t r3f-tutorial:${GITHUB_SHA} .
