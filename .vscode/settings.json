@@ -10,5 +10,6 @@
       "mode": "auto"
     }
   ],
-  "workbench.colorTheme": "Ayu Light Bordered"
+  "workbench.colorTheme": "Ayu Light Bordered",
+  "files.eol": "\r\n"
 }

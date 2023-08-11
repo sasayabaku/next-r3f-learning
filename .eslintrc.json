@@ -11,6 +11,7 @@
     "implicit-arrow-linebreak": "off",
     "function-paren-newline": "off",
     "operator-linebreak": "off",
-    "no-extraneous-dependencies": 0
+    "no-extraneous-dependencies": 0,
+    "linebreak-style": ["error", "windows"]
   }
 }

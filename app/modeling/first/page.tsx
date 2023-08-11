@@ -43,26 +43,6 @@ export default function Page() {
   });
 
   return (
-<<<<<<< HEAD
-    <>
-      <div className='w-full h-screen'>
-        <StrictMode>
-          <Canvas
-            gl={{
-              antialias: true,
-              toneMapping: THREE.ACESFilmicToneMapping,
-              outputEncoding: THREE.sRGBEncoding,
-            }}
-            camera={{
-              fov: 45,
-              near: 0.1,
-              far: 100,
-              position: [0, 0, 4],
-            }}
-          >
-            <OrbitControls makeDefault />
-            <Perf position='top-left' />
-=======
     <div className="w-full h-full">
       <StrictMode>
         <Canvas
@@ -80,7 +60,6 @@ export default function Page() {
         >
           <OrbitControls makeDefault />
           <Perf position="top-left" />
->>>>>>> d8033dd7e6377304b9c3141d301e0647635cdc45
 
           <color args={backgroundColor} attach="background" />
 
@@ -94,48 +73,19 @@ export default function Page() {
   );
 }
 
-<<<<<<< HEAD
 // function Office() {
-//   const { nodes, materials } = useGLTF("/models/office.glb")
+//   const { scene } = useGLTF('/models/Cozy_Room_ALL.glb');
 
-//   const ref: any = useRef()
+//   const ref: any = useRef();
 
-//   console.log(nodes)
-//   console.log(materials)
+//   console.log(scene);
 
 //   return (
-//     <>
-//       <group dispose={null} ref={ref}>
-//         <mesh geometry={nodes["01_office"].geometry} material={materials["01"]} />
-//         <mesh
-//           geometry={nodes["02_library"].geometry}
-//           material={materials["02"]}
-//           position={[2.1, 0, 0]}
-//           rotation={[0, -(Math.PI / 2), 0]}
-//         />
-//       </group>
-//     </>
-//   )
+//     <group dispose={null} ref={ref}>
+//       <primitive object={scene} />
+//     </group>
+//   );
 // }
 
-function Office() {
-  const { scene } = useGLTF("/models/Cozy_Room_ALL.glb")
-
-  const ref: any = useRef()
-
-  console.log(scene)
-
-  return (
-    <>
-      <group dispose={null} ref={ref}>
-        <primitive object={scene} />
-      </group>
-    </>
-  )
-}
-
-useGLTF.preload("/models/office.glb")
-useGLTF.preload("/models/Cozy_Room_ALL.glb")
-=======
 useGLTF.preload('/models/office.glb');
->>>>>>> d8033dd7e6377304b9c3141d301e0647635cdc45
+useGLTF.preload('/models/Cozy_Room_ALL.glb');
