@@ -73,4 +73,19 @@ export default function Page() {
   );
 }
 
+// function Office() {
+//   const { scene } = useGLTF('/models/Cozy_Room_ALL.glb');
+
+//   const ref: any = useRef();
+
+//   console.log(scene);
+
+//   return (
+//     <group dispose={null} ref={ref}>
+//       <primitive object={scene} />
+//     </group>
+//   );
+// }
+
 useGLTF.preload('/models/office.glb');
+useGLTF.preload('/models/Cozy_Room_ALL.glb');
