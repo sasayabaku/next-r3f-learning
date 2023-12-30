@@ -10,7 +10,7 @@ import { Sphere, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 import { Modal } from '../_component/modal';
-import { Footer } from '../_component/footer';
+import { AnotherFooter } from '../_component/footer';
 
 import './styles.scss';
 import { RootState } from '../../../redux/store';
@@ -58,7 +58,8 @@ export default function Page() {
         </Suspense>
       </Canvas>
 
-      <Footer />
+      {/* <Footer /> */}
+      <AnotherFooter />
 
       {whatModal === 'about' && <Modal />}
     </div>
