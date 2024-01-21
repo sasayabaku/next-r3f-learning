@@ -12,6 +12,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       NODE_ENV: development
+      WATCHPACK_POLLING: true
     ports:
       - '4000:4000'
 volumes:

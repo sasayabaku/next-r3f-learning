@@ -12,6 +12,8 @@
     "function-paren-newline": "off",
     "operator-linebreak": "off",
     "no-extraneous-dependencies": 0,
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "import/no-named-as-default": 0,
+    "react/no-unknown-property": 0
   }
 }
