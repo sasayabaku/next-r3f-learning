@@ -42,6 +42,16 @@ function ContentList() {
         '.border3',
         { x: 0, autoAlpha: 0 },
         { x: 0, autoAlpha: 1, ease: 'expo.easeIn', duration: baseDuration },
+      )
+      .fromTo(
+        '.item4',
+        { x: -50, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, ease: 'expo.easeIn', duration: baseDuration },
+      )
+      .fromTo(
+        '.border4',
+        { x: 0, autoAlpha: 0 },
+        { x: 0, autoAlpha: 1, ease: 'expo.easeIn', duration: baseDuration },
       );
   }, []);
 
@@ -59,6 +69,10 @@ function ContentList() {
         <Link href="/panorama/checker">Panorama</Link>
       </li>
       <li className="borderItem border3" />
+      <li className="item item4">
+        <Link href="/mixamo">Mixamo Demo</Link>
+      </li>
+      <li className="borderItem border4" />
     </ul>
   );
 }

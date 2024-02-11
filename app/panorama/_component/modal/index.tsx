@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { useDispatch } from 'react-redux';
 import { setModal } from '../../../../redux/features/modal/modalSlices';
 
@@ -11,6 +13,18 @@ export function Modal() {
   function onClose() {
     dispatch(setModal('none'));
   }
+
+  function closeIFrame() {
+    dispatch(setModal('none'));
+  }
+
+  useEffect(() => {
+    window.addEventListener('message', (event) => {
+      if (event.data === 'close') {
+        closeIFrame(); // Iframe or モーダルを閉じる処理
+      }
+    });
+  }, []);
 
   return (
     <div className="modalBody">
@@ -25,8 +39,14 @@ export function Modal() {
             }}
           />
         </div>
-        <div>Title</div>
-        <div>children</div>
+        <iframe
+          src="http://localhost:8080"
+          id="chatbot"
+          title="chatbot"
+          width="100%"
+          height="100%"
+          style={{ border: 'none' }}
+        />
       </div>
     </div>
   );

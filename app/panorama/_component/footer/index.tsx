@@ -7,6 +7,7 @@ import { useState, useRef } from 'react';
 
 import { gsap } from 'gsap';
 
+import { join } from 'path';
 import { setModal } from '../../../../redux/features/modal/modalSlices';
 
 export function Footer() {
@@ -53,6 +54,7 @@ export function Footer() {
 export function AnotherFooter() {
   const containerRef = useRef(null);
 
+  const dispatch = useDispatch();
   const [isExpand, setExpand] = useState(false);
 
   const handleExpand = () => {
@@ -79,6 +81,11 @@ export function AnotherFooter() {
     });
 
     setExpand(false);
+  };
+
+  const handleIframe = () => {
+    const container = containerRef.current;
+    dispatch(setModal('about'));
   };
 
   return (
@@ -123,8 +130,14 @@ export function AnotherFooter() {
             )}
           </li>
           <li>
-            <button type="button" className="menuInteractive">
-              TOPIC
+            <button
+              type="button"
+              className="menuInteractive"
+              onClick={() => {
+                handleIframe();
+              }}
+            >
+              IFRAME
             </button>
           </li>
         </ul>

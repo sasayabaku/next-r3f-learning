@@ -6,7 +6,7 @@ import { Suspense, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Canvas, useLoader } from '@react-three/fiber';
-import { Sphere, OrbitControls } from '@react-three/drei';
+import { Sphere, OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
 
 import { Modal } from '../_component/modal';
