@@ -8,7 +8,7 @@ import * as THREE from 'three';
 
 import './styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from 'panorama/_component/modal';
+import Modal from '../_component/modal';
 import { setModal } from '../../../redux/features/modal/modalSlices';
 import { RootState } from '../../../redux/store';
 
