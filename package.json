@@ -63,7 +63,7 @@
   "scripts": {
     "lint": "next lint --fix",
     "dev": "npx next dev -p 4000",
-    "build": "next build",
+    "build": "NODE_ENV=production npx next build",
     "analyze": "ANALYZE=true next build",
     "start": "npx next start -p 4000",
     "serve": "npx serve out -p 4000",
