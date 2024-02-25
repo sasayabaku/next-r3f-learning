@@ -61,7 +61,11 @@ export default function Page() {
       {/* <Footer /> */}
       <AnotherFooter />
 
-      {whatModal === 'about' && <Modal />}
+      {whatModal === 'about' && (
+        <Modal>
+          <div />
+        </Modal>
+      )}
     </div>
   );
 }

@@ -16,7 +16,8 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
-  reactStrictMode: true,
+  reactStrictMode: false,
+  output: 'export',
   images: {},
   webpack(config, { isServer }) {
     // audio support

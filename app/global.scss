@@ -3,6 +3,7 @@ $color-modal-overlay: #c8c8c844;
 $color-modal-bg: #ffffff;
 
 $z-index-modal: 80;
+$z-index-canvas: 20;
 
 html,
 body {
@@ -43,4 +44,6 @@ button {
   height: 100vh;
 }
 
-// }
+iframe {
+  border: none;
+}
