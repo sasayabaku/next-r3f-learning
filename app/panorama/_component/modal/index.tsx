@@ -1,11 +1,17 @@
 'use client';
 
+import React from 'react';
+
 import { useDispatch } from 'react-redux';
 import { setModal } from '../../../../redux/features/modal/modalSlices';
 
 import './styles.scss';
 
-export function Modal() {
+type ModalProps = {
+  children: React.ReactNode;
+};
+
+export function Modal({ children }: ModalProps) {
   const dispatch = useDispatch();
 
   function onClose() {
@@ -25,8 +31,7 @@ export function Modal() {
             }}
           />
         </div>
-        <div>Title</div>
-        <div>children</div>
+        {children && <div className="children">{children}</div>}
       </div>
     </div>
   );

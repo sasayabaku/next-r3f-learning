@@ -16,7 +16,8 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: false,
+  output: 'export',
   images: {},
   webpack(config, { isServer }) {
     // audio support
@@ -44,6 +45,12 @@ const nextConfig = {
       exclude: /node_modules/,
       use: ['raw-loader', 'glslify-loader'],
     });
+
+    // hot reload
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 200,
+    };
 
     return config;
   },
